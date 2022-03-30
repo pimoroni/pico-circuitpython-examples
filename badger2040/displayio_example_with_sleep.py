@@ -9,6 +9,9 @@ from adafruit_display_text import label
 """
 An extension to the DisplayIO example that includes the activity LED
 as well as puts the board to sleep once the screen has been updated.
+
+To wake your badger when on battery, hold down any of the
+front buttons until the activity light stops flashing.
 """
 
 display = board.DISPLAY
