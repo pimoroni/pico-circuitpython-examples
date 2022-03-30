@@ -12,7 +12,7 @@ This repo contains CircuitPython example code for Pimoroni RP2040 boards and our
 
 Some code in this repo uses additional CircuitPython libraries. You can find these in the CircuitPython library bundle at https://circuitpython.org/libraries - make sure to download the bundle that matches your version of CircuitPython! Once you've located the relevant file or directory, copy it into the `lib` folder on `CIRCUITPY`.
 
-## Accessing the REPL in CircuitPython
+## Board Definitions
 
 With the serial console open in Mu, press Ctrl-C to enter the REPL.
 
