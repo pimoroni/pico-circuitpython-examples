@@ -1,15 +1,23 @@
+import time
 import board
 import terminalio
 import displayio
+import digitalio
 import vectorio
 from adafruit_display_text import label
 
 """
-An example of how to show text on the Badger 2040's
-screen using the built-in DisplayIO object.
+An extension to the DisplayIO example that includes the activity LED
+as well as puts the board to sleep once the screen has been updated.
 """
 
 display = board.DISPLAY
+enable = board.ENABLE_DIO
+
+# Set up and turn on the activity LED
+act = digitalio.DigitalInOut(board.USER_LED)
+act.direction = digitalio.Direction.OUTPUT
+act.value = True
 
 # Set text, font, and color
 title = "HELLO WORLD"
@@ -45,6 +53,17 @@ group.append(subtitle_label)
 display.show(group)
 display.refresh()
 
-# Loop forever so you can enjoy your message
+# Wait a few seconds for the screen to refresh
+time.sleep(3)
+
+# Turn the board off
+enable.value = False
+
+# Loop forever so you can enjoy your message when on USB power
+# When on battery this will never be reached, as indicated
+# by the activity LED turning off rather than flashing
 while True:
-    pass
+    act.value = False
+    time.sleep(0.25)
+    act.value = True
+    time.sleep(0.25)
