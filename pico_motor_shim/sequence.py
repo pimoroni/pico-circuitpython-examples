@@ -8,10 +8,10 @@ from adafruit_motor import motor
 
 # Pin names for the Pico Motor Shim
 BUTTON_A = board.GP2
-MOTOR_1P = board.GP6
-MOTOR_1N = board.GP7
-MOTOR_2P = board.GP27
-MOTOR_2N = board.GP26
+MOTOR_1_P = board.GP6
+MOTOR_1_N = board.GP7
+MOTOR_2_P = board.GP27
+MOTOR_2_N = board.GP26
 
 # Motor constants
 FREQUENCY = 25000               # Chose a frequency above human hearing
@@ -29,12 +29,12 @@ led = digitalio.DigitalInOut(board.LED)
 led.direction = digitalio.Direction.OUTPUT
 
 # Create the pwm and motor objects
-pwm_1p = pwmio.PWMOut(MOTOR_1P, frequency=FREQUENCY)
-pwm_1n = pwmio.PWMOut(MOTOR_1N, frequency=FREQUENCY)
+pwm_1p = pwmio.PWMOut(MOTOR_1_P, frequency=FREQUENCY)
+pwm_1n = pwmio.PWMOut(MOTOR_1_N, frequency=FREQUENCY)
 motor1 = motor.DCMotor(pwm_1p, pwm_1n)
 
-pwm_2p = pwmio.PWMOut(MOTOR_2P, frequency=FREQUENCY)
-pwm_2n = pwmio.PWMOut(MOTOR_2N, frequency=FREQUENCY)
+pwm_2p = pwmio.PWMOut(MOTOR_2_P, frequency=FREQUENCY)
+pwm_2n = pwmio.PWMOut(MOTOR_2_N, frequency=FREQUENCY)
 motor2 = motor.DCMotor(pwm_2p, pwm_2n)
 
 # Set the motor decay modes (if unset the default will be FAST_DECAY)
