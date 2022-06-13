@@ -2,7 +2,6 @@
 
 import time
 import board
-import time
 import math
 import random
 import pwmio
@@ -81,6 +80,7 @@ class PID:
 
 def button_pressed():
     return not user_sw.value
+
 
 def to_degrees(position):
     return (position * 360.0) / COUNTS_PER_REV

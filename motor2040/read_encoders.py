@@ -26,8 +26,10 @@ encoders = [enc_a, enc_b, enc_c, enc_d]
 def button_pressed():
     return not user_sw.value
 
+
 def to_degrees(position):
     return (position * 360.0) / COUNTS_PER_REV
+
 
 # Run until the user switch is pressed
 while not button_pressed():

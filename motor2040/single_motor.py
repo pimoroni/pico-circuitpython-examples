@@ -33,6 +33,7 @@ mot.decay_mode = DECAY_MODE
 def button_pressed():
     return not user_sw.value
 
+
 # Run the motor sequence
 while True:
     # Forward slow

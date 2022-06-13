@@ -2,9 +2,7 @@
 
 import time
 import board
-import time
 import math
-import random
 import pwmio
 import digitalio
 import rotaryio
@@ -29,7 +27,6 @@ SPD_PRINT_SCALE = 20                # Driving Speed multipler
 
 POSITION_EXTENT = 180               # How far from zero to move the motor, in degrees
 INTERP_MODE = 2                     # The interpolating mode between setpoints. STEP (0), LINEAR (1), COSINE (2)
-
 
 # PID values
 POS_KP = 0.14                       # Position proportional (P) gain
@@ -95,6 +92,7 @@ class PID:
 
 def button_pressed():
     return not user_sw.value
+
 
 def to_degrees(position):
     return (position * 360.0) / COUNTS_PER_REV

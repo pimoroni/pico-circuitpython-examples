@@ -15,11 +15,11 @@ while True:
     for i in range(board.NUM_LEDS):
         led[i] = (255, 0, 0)
         time.sleep(0.5)
-        
+
     for i in range(board.NUM_LEDS):
         led[i] = (0, 255, 0)
         time.sleep(0.5)
-        
+
     for i in range(board.NUM_LEDS):
         led[i] = (0, 0, 255)
         time.sleep(0.5)

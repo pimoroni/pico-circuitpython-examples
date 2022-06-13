@@ -2,9 +2,6 @@
 
 import time
 import board
-import time
-import math
-import random
 import pwmio
 import digitalio
 import rotaryio
@@ -99,8 +96,10 @@ class PID:
 def button_pressed():
     return not user_sw.value
 
+
 def to_revs(position):
     return position / COUNTS_PER_REV
+
 
 # Helper functions for driving in common directions
 def drive_forward(speed):
@@ -143,7 +142,7 @@ for i in range(board.NUM_MOTORS):
     motors[i].throttle = 0.0
 
 revs = [0.0] * board.NUM_MOTORS
-last_revs =[0.0] * board.NUM_MOTORS
+last_revs = [0.0] * board.NUM_MOTORS
 
 # Run until the user switch is pressed
 while not button_pressed():

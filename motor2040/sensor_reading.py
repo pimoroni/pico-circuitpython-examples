@@ -23,6 +23,7 @@ analog_in = AnalogIn(board.SHARED_ADC)
 def get_voltage(pin):
     return (pin.value * 3.3) / 65536
 
+
 def select(address):
     addr0_pin.value = address & 0b001
     addr1_pin.value = address & 0b010

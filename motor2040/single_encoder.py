@@ -27,8 +27,10 @@ else:
 
 last_position = None
 
+
 def button_pressed():
     return not user_sw.value
+
 
 # Run until the user switch is pressed
 while not button_pressed():

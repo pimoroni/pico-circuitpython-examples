@@ -2,7 +2,6 @@
 
 import time
 import board
-import time
 import math
 import random
 import pwmio
@@ -24,7 +23,7 @@ DECAY_MODE = motor.SLOW_DECAY       # The decay mode affects how the motor
 GEAR_RATIO = 50                     # The gear ratio of the motor
 COUNTS_PER_REV = 12 * GEAR_RATIO    # The counts per revolution of the motor's output shaft
 
-SPEED_SCALE = 5.4                       # The scaling to apply to each motor's speed to match its real-world speed
+SPEED_SCALE = 5.4                   # The scaling to apply to each motor's speed to match its real-world speed
 
 UPDATES = 100                       # How many times to update the motor per second
 UPDATE_RATE = 1 / UPDATES
@@ -82,6 +81,7 @@ class PID:
 
 def button_pressed():
     return not user_sw.value
+
 
 def to_revs(position):
     return position / COUNTS_PER_REV
