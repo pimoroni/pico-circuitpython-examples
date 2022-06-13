@@ -54,7 +54,7 @@ while True:
     motor1.throttle = 0.5
     motor2.throttle = -0.5
     time.sleep(1)
-    if not button_a.value:  # Exit if button is pressed
+    if button_pressed():  # Exit if button is pressed
         break
 
     # Stop
@@ -89,7 +89,7 @@ while True:
     motor1.throttle = 0
     motor2.throttle = 0
     time.sleep(1)
-    if not button_a.value:  # Exit if button is pressed
+    if button_pressed():  # Exit if button is pressed
         break
 
     # Backwards fast
